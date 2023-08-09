@@ -37,14 +37,14 @@ def unauthorized(error) -> str:
 
 
 @app.errorhandler(403)
-def is_forbidden(error) -> str:
+def forbidden(error) -> str:
     """ Forbidden handler.
     """
     return jsonify({"error": "Forbidden"}), 403
 
 
 @app.before_request
-def before():
+def before_request() -> str:
     """ Before request.
     """
     if auth:
