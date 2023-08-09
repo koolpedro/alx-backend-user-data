@@ -35,9 +35,12 @@ def unauthorized() -> str:
     abort(401)
 
 
-@app_views.route("/api/v1/forbidden", methods=["GET"])
-def forbidden_endpoint():
-    """
-    Endpoint that raises a 403 error using Flask's abort function.
+@app_views.route('/forbidden', 
+                  methods=['GET'],
+                  strict_slashes=False)
+def forbidden():
+    """GET /api/vi/forbidden
+    Return:
+     - A 403 error
     """
     abort(403)
